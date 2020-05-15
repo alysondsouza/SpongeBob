@@ -1,0 +1,164 @@
+CREATE SCHEMA sponge_bob;
+USE sponge_bob;
+
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS `members`;
+DROP TABLE IF EXISTS `results`;
+SET FOREIGN_KEY_CHECKS = 1;
+
+CREATE TABLE `members` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(15) NOT NULL,
+  `surname` varchar(15) NOT NULL,
+  `phone` int (10) NOT NULL,
+  `birthdate` date NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `modality` varchar(255) NOT NULL,
+  `discipline` varchar(255) DEFAULT NULL,
+  `status` varchar (255) DEFAULT NULL,
+  `payment` double DEFAULT NULL,
+  `paid_date` date DEFAULT NULL,
+  `on_hold_payment` double DEFAULT NULL,
+  `on_hold_date` date DEFAULT NULL,
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Ali", "Souza", 12345678, '1982-08-25', "Senior", "Competitor", "Crawl", "Deleted", null, null, null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Sponge", "Bob", 87654321, '2005-01-01', "Junior", "Leisure", null, "Inactive", 1000.00, '19-12-01', 500.0, '20-05-01');
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Elmo", "SesameStreet", 11223344, '1960-05-04', "Senior", "Competitor", "Butterfly", "Active", 1200.00, '19-06-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("AliBaba", "Thief", 12341122, '1960-05-04', "Senior", "Competitor", "Chest", "Active", 1200.00, '17-06-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Coockie Monster", "Sesame Street", 12345677, '1982-08-25', "Senior", "Competitor", "Butterfly", "Inactive", 1600.00, '17-01-01', 500.0, '17-12-01');
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Kermit", "Sesame Street", 12344321, '1990-07-25', "Senior", "Competitor", "Backstroke", "Inactive", 1600.00, '18-01-01', 500.0, '18-12-01');
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Batman", "DC", 88664422, '1975-10-10', "Senior", "Competitor", "Crawl", "Active", 1600.00, '20-01-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Catwoman", "DC", 44665511, '1989-11-11', "Senior", "Competitor", "Chest", "Inactive", 1600.00, '19-04-01', 500.0, '20-03-01');
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Superman", "DC", 90664422, '2001-01-05', "Junior", "Competitor", "Crawl", "Active", 1000.00, '20-04-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Wonderwoman", "DC", 12344422, '2003-06-24', "Junior", "Competitor", "Crawl", "Active", 1000.00, '20-03-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Wolverine", "Marvel", 44668822, '2002-06-17', "Junior", "Competitor", "Crawl", "Active", 1000.00, '20-02-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Cyclops", "Marvel", 98453278, '1980-02-28', "Senior", "Competitor", "Backstroke", "Active", 1600.00, '18-08-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Phenix", "Marvel", 16161616, '2005-06-01', "Junior", "Competitor", "Butterfly", "Active", 1000.00, '20-01-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("IronMan", "Marvel", 17171717, '2004-02-05', "Junior", "Competitor", "Butterfly", "Active", 1000.00, '20-03-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("BlackWidow", "Marvel", 15151515, '2003-05-11', "Junior", "Competitor", "Crawl", "Active", 1000.00, '20-02-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Hulk", "Marvel", 14314312, '2005-04-12', "Junior", "Competitor", "Crawl", "Active", 1000.00, '20-04-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Captain America", "Marvel", 13151315, '2003-07-09', "Junior", "Competitor", "Backstroke", "Active", 1000.00, '20-02-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Deadpool", "Marvel", 65432112, '2004-09-17', "Junior", "Competitor", "Backstroke", "Active", 1000.00, '20-01-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Thor", "Marvel", 98745658, '2003-10-24', "Junior", "Competitor", "Chest", "Active", 1000.00, '20-03-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("AntMan", "Marvel", 48156835, '2005-10-28', "Junior", "Competitor", "Chest", "Active", 1000.00, '20-04-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Aquaman", "DC", 44455566, '1929-10-10', "Senior", "Competitor", "Butterfly", "Active", 1200.00, '20-01-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Joker", "DC", 33344455, '1970-09-15', "Senior", "Competitor", "Butterfly", "Active", 1600.00, '20-03-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Harley Quinn", "DC", 11122233, '1980-03-27', "Senior", "Competitor", "Crawl", "Active", 1600.00, '20-04-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Lex Luthor", "DC", 11001100, '1981-02-21', "Senior", "Competitor", "Crawl", "Active", 1600.00, '20-01-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Shazam", "DC", 22002200, '1935-02-21', "Senior", "Competitor", "Backstroke", "Active", 1200.00, '20-02-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Flash", "DC", 33001122, '1978-08-29', "Senior", "Competitor", "Backstroke", "Active", 1600.00, '20-03-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Green Arrow", "DC", 77889944, '1930-02-21', "Senior", "Competitor", "Chest", "Active", 1200.00, '20-04-01', null, null);
+INSERT into members (name, surname, phone, birthdate, category, modality, discipline, status, payment, paid_date, on_hold_payment, on_hold_date) VALUES ("Cyborg", "DC", 24561912, '1977-08-21', "Senior", "Competitor", "Chest", "Active", 1600.00, '20-01-01', null, null);
+
+
+CREATE TABLE `results` (
+  `r_id` int(10) NOT NULL AUTO_INCREMENT,
+  `id` int(10) NOT NULL,
+  `type` varchar (255) NOT NULL,
+  `date` date NOT NULL,
+  `millisecond` int(5) NOT NULL,
+  `tournament` varchar(255) DEFAULT NULL,
+  `qualification` int(3) DEFAULT NULL,
+  `trainer` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`r_id`),
+  FOREIGN KEY (id) REFERENCES members (id)
+) ENGINE=InnoDB;
+
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (4, "Competition", '20-01-10', 55770, "Little Mermaid Championship", 1, "Dori");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (10, "Competition", '20-03-25', 53580, "20.000 Leagues Under the Sea Championship", 5, "Dori");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (1, "Training", '20-05-01', 56000, null, null, "Skywalker");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (3, "Competition", '20-05-01', 51000, "Sea Monster Competition", 3, "Skywalker");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (3, "Training", '20-05-01', 54310, null, null, "Skywalker");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (11, "Training", '20-05-02', 56700, null, null, "Skywalker");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (3, "Training", '20-05-02', 57240, null, null, "Ariel");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (3, "Training", '20-05-03', 55350, null, null, "Skywalker");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (4, "Competition", '20-05-04', 52790, "Captain Nemo Pre-Olympics", 2, "Ariel");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (12, "Training", '20-05-04', 55120, null, null, "Skywalker");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (5, "Training", '20-05-04', 53680, null, null, "Skywalker");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (7, "Training", '20-05-05', 54300, null, null, "Skywalker");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (6, "Training", '20-05-01', 56990, null, null, "Pops");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (10, "Competition", '20-05-05', 53250, "DC Tournament", 1, "Pops");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (11, "Training", '20-05-03', 55120, null, null, "Pops");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (7, "Training", '20-05-01', 54020, null, null, "Pops");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (7, "Training", '20-05-02', 56720, null, null, "Pops");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (7, "Training", '20-05-03', 58820, null, null, "Pops");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (9, "Competition", '20-05-05', 53290, "DC Tournament", 2, "Ariel");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (8, "Training", '20-05-01', 57140, null, null, "Ariel");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (9, "Training", '20-05-04', 54210, null, null, "Ariel");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (10, "Training", '20-05-01', 55190, null, null, "Ariel");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (11, "Training", '20-05-02', 57990, null, null, "Popeye");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (12, "Training", '20-05-01', 56880, null, null, "Popeye");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (12, "Competition", '20-05-05', 54550, "DC Tournament", 3, "Popeye");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (13, "Training", '20-05-01', 55480, null, null, "Magneto");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (13, "Training", '20-05-02', 57320, null, null, "Magneto");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (14, "Training", '20-05-01', 56240, null, null, "Magneto");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (14, "Training", '20-05-01', 57240, null, null, "Magneto");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (14, "Competition", '20-01-01', 54550, "New Year Competition", 1, "Magneto");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (15, "Competition", '20-01-01', 54780, "New Year Competition", 2, "Groot");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (15, "Training", '20-05-01', 58230, null, null, "Groot");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (15, "Training", '20-05-02', 57990, null, null, "Groot");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (16, "Training", '20-05-01', 57100, null, null, "Groot");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (16, "Training", '20-05-02', 56890, null, null, "Groot");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (17, "Training", '20-05-01', 54250, null, null, "Magneto");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (17, "Training", '20-05-02', 55140, null, null, "Magneto");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (17, "Competition", '20-01-01', 55450, "New Year Competition", 3, "Magneto");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (18, "Training", '20-05-01', 56670, null, null, "Loki");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (18, "Training", '20-05-02', 57120, null, null, "Loki");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (19, "Training", '20-05-01', 54890, null, null, "Storm");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (19, "Training", '20-05-02', 57290, null, null, "Storm");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (19, "Competition", '20-03-01', 54890, "Villain Champ", 1, "Storm");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (20, "Training", '20-05-01', 56480, null, null, "Mystique");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (20, "Training", '20-05-02', 57210, null, null, "Mystique");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (21, "Training", '20-05-01', 56100, null, null, "Robin");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (21, "Training", '20-05-02', 55870, null, null, "Robin");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (22, "Training", '20-05-01', 54180, null, null, "Lois Lane");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (22, "Training", '20-05-03', 56190, null, null, "Lois Lane");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (22, "Competition", '20-03-01', 53470, "Heroes Champ", 1, "SuperBoy");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (23, "Competition", '20-03-01', 53490, "Heroes Champ", 2, "SuperBoy");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (23, "Training", '20-05-01', 57480, null, null, "Lois Lane");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (23, "Training", '20-05-04', 55480, null, null, "Lois Lane");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (24, "Training", '20-05-01', 56550, null, null, "Firestorm");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (24, "Training", '20-05-04', 57110, null, null, "Firestorm");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (25, "Training", '20-05-01', 55870, null, null, "Canary");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (25, "Training", '20-05-05', 56320, null, null, "Canary");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (26, "Training", '20-05-01', 57140, null, null, "Hawkman");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (26, "Training", '20-05-03', 54270, null, null, "Hawkman");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (26, "Competition", '20-03-01', 54490, "Heroes Champ", 3, "Hawkman");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (27, "Competition", '20-03-01', 55100, "Heroes Champ", 4, "Lantern");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (27, "Training", '20-05-03', 55840, null, null, "Lantern");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (27, "Training", '20-05-05', 56390, null, null, "Lantern");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (28, "Training", '20-05-01', 57250, null, null, "DrFate");
+INSERT into results (id, type, date, millisecond, tournament, qualification, trainer) VALUES (28, "Training", '20-05-03', 56770, null, null, "DrFate");
+
+
+
+
+
+
+
+-- UPDATE SATEMENTS:
+-- UPDATE sponge_bob.members SET status = 'Inactive', name ='Alyson' WHERE id = '1';
+-- UPDATE sponge_bob.members SET status = 'Active', category = 'category', payment = '1600.0', paid_date = '2020-05-13' WHERE id = 1;
+-- UPDATE sponge_bob.members SET status = 'Active', category = 'category', payment = 'subscription', paid_date = 'paid_date', on_hold_payment = 'null', on_hold_date = 'null' WHERE id =
+
+-- DELETE STATEMENTS:
+-- DELETE FROM sponge_bob.members WHERE id = 1;
+-- TRUNCATE TABLE sponge_bob.members;
+
+-- SELECT STATEMENTS:
+-- SELECT * FROM sponge_bob.members ;
+-- SELECT * FROM sponge_bob.results;
+-- SELECT *, DATE_FORMAT(NOW(), '%Y') - DATE_FORMAT(birthdate, '%Y') - (DATE_FORMAT(NOW(), '00-%m-%d') < DATE_FORMAT(birthdate, '00-%m-%d')) AS automatic_age FROM sponge_bob.members;
+-- SELECT *, DATE_FORMAT(NOW(), '%YYYY-MM-DD') - DATE_FORMAT(paid_date, '%YYYY-MM-DD') - (DATE_FORMAT(NOW(), '00-%m-%d') < DATE_FORMAT(paid_date, '00-%m-%d')) AS overdue_by_year FROM sponge_bob.members WHERE status = 'Active' ORDER BY 'overdue_by_year';
+-- SELECT *, DATE_FORMAT(NOW(), '%YYYY-MM-DD') - DATE_FORMAT(on_hold_date, '%YYYY-MM-DD') - (DATE_FORMAT(NOW(), '00-%m-%d') < DATE_FORMAT(on_hold_payment, '00-%m-%d')) AS on_hold_overdue_by_year FROM sponge_bob.members WHERE status = 'Inactive'
+-- SELECT *, datediff(birthday, datenow()) AS automatic_age FROM sponge_bob.members;
+-- SELECT * FROM sponge_bob.members WHERE name LIKE '%ali%' OR name LIKE '%elmo%';
+-- SELECT * FROM sponge_bob.members WHERE birthdate LIKE '1982-08-25';
+-- SELECT * FROM sponge_bob.results WHERE id = 1 AND type = 'competition';
+
+-- FOREIGNER KEY STATEMENTS:
+-- SELECT * FROM sponge_bob.results r JOIN sponge_bob.members m ON r.id = m.id;
+SELECT * FROM sponge_bob.results r RIGHT JOIN sponge_bob.members m ON r.id = m.id;
+-- SELECT * FROM sponge_bob.results r JOIN sponge_bob.members m ON r.id = m.id WHERE discipline = 'Crawl' AND m.category = 'Junior' AND m.status = 'Active' ORDER BY millisecond ASC LIMIT 5
